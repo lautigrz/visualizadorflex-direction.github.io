@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox: flex-direction</title>
+<style>
+  #container {
+    display: flex;
+    width: 400px;
+    height: 300px;
+    border: 2px solid black;
+    margin-bottom: 20px;
+  }
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    border: 1px solid black;
+    margin: 5px;
+  }
+</style>
+</head>
+<body>
+<h2>Visualizador de flex-direction</h2>
+<label for="direction-select">Selecciona una dirección:</label>
+<select id="direction-select">
+  <option value="row">Row</option>
+  <option value="column">Column</option>
+  <option value="row-reverse">Row-reverse</option>
+  <option value="column-reverse">Column-reverse</option>
+</select>
+
+<div id="container">
+  <div class="box">1</div>
+  <div class="box">2</div>
+  <div class="box">3</div>
+</div>
+
+<script>
+const container = document.getElementById('container');
+const select = document.getElementById('direction-select');
+
+select.addEventListener('change', () => {
+  container.style.flexDirection = select.value;
+});
+</script>
+</body>
+</html>
